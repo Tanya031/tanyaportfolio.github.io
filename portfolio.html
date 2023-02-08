@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="portfoliostyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="header">
+    <div class="container">
+        <nav> 
+            <h1><span>T</span>ANYA</h1>
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#certificates">Certificates </a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+           <H1> Hi, I am <span>T</span>ANYA </H1>
+        </div>
+    </div>
+</div>
+<!--------about------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col1">
+                <img src="/TANYA UDEMY/tanyacoat.jpeg">
+            </div>
+            <div class="col1">
+               <h1 class="sub-title"> About me</h1>
+               <p>I am an Undergraduate basically from the UIET Kurukshetra, KUK, pursuing my B.TECH in the Computer Science
+                and Technology.
+                Coming to my strengths and weaknesses, my strengths is that I am an innovative, have positive attitude , can
+                handle different opportunities at a particular time and am committed to my work. My weakness is procrastination.
+                All my goal is to complete the work with full satisfaction and complete it before the assigned time.</p>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links"onclick="opentab('experience')">Experience </p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Web DEVELOPMENT</span><br>HTML CSS JAVASCRIPT</li>
+                    <li><span>Languages</span><br>C C++ Java</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+                No experience
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>University Institute Of Engineering and Technology, Kurukshetra University</span><br>
+                    Bachelor of Technology, Computer Science and Engineering <br> Year:2024 <br> Grade: 9.2</li>
+                    <li><span>St. Mary's Convent Sr. Sec. school</span><br>Class: XII CBSE NON MEDICAL <br> Year:2024 <br> Grade: 9.4 </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------certification-------------->
+<div id="certificates">
+    <div class="container">
+        <h1 class="sub-title"> My Certificates</h1>
+        <div class="certificate-list">
+            <div>
+                
+                <h2>DSA</h2>
+                <p>Data structures and algorithms</p>
+                <a href="/internshaladsacertificate.png">Certificate</a>
+            </div>
+            <div>
+                
+                <h2>Web development</h2>
+                <p>Designing web pages</p>
+                <a href="/udemycoursecertificate.png">Certificate</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!------contact------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-left">
+                <h1 class="sub-title"> Contact me</h1>
+                <p><i class="fa-regular fa-envelope"></i>  Contact me at tanyachhabra5632@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>  Mobile number 9255163701</p>
+               <div class="social-icons">
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://telegram.org"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://in.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+               </div>
+            </div>
+            <div class="col-right">
+                <form name="submit-to-google-sheet">
+                    Enter yor name:<input type="text" name="NAME" placeholder="Your name">
+                    Enter yor email:<input type="email" name="EMAIL" placeholder="Your email">
+                    Enter yor message:<textarea name="MESSAGE"  rows="6" placeholder="Your message"></textarea>
+                  <button  class="btn"type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+</script>
+
+  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzXgFACsyF1fg-FU254qSIeiHPCOpkbaYCDUdnbs-7TrofTARc-z8xGPCQGZq36azm7Yw/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script> 
+</body>
+</html>
